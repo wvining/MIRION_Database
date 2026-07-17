@@ -1,27 +1,29 @@
-astrodb-template-db
+MIRION Catalog of Yellowballs Database
 ---------------------------
 
 [![build](https://github.com/astrodbtoolkit/astrotemplate-db/actions/workflows/run_tests.yml/badge.svg)](https://github.com/astrodbtoolkit/astrotemplate-db/actions/workflows/run_tests.yml)  ![GitHub License](https://img.shields.io/github/license/astrodbtoolkit/astrodb-template-db)
 
-A template schema for astronomical databases.
+An [AstroDB Toolkit](https://github.com/astrodbtoolkit) database for the **MIRION Catalog of Yellowballs**
+(Wolf-Chase, Kerton, Devine, et al., "Bridging Intermediate- and High-Mass Star Formation with the MIRION
+Catalog of Yellowballs"). The database has a single `Sources` table with one row per YB (`YB1`..`YB6176`),
+merging the catalog's Distances, Herschel-Matched, Photometry, Velocities, and Cross-match tables. See
+`schema.yaml` and [docs/schema/Sources.md](docs/schema/Sources.md) for the full column list, and
+`scripts/build_mirion_dataset.py` for the generator that produces `data/source/*.json` from the source MRT
+files at the repo root.
 
-Usage instructions are included in the companion `astrodb-utils` package: [Getting started with a new database](https://astrodb-utils.readthedocs.io/en/latest/pages/make_new_db/getting_started_new_database.html)
+Usage instructions for the underlying framework are included in the companion `astrodb-utils` package:
+[Getting started with a new database](https://astrodb-utils.readthedocs.io/en/latest/pages/make_new_db/getting_started_new_database.html)
 
-Entity relationship diagram of the template schema
+Entity relationship diagram of the schema
 
 ![Entity Relationship Diagram](docs/figures/schema_erd.png)
 
-Acknowledgements
-----------------
+Data license
+------------
 
-- The `PhotometryFilters` data is sourced from the SVO Filter Profile Service "Carlos Rodrigo", funded by MCIN/AEI/10.13039/501100011033/ through grant PID2023-146210NB-I00.
-
-  - Rodrigo, C., Cruz, P., Aguilar, J.F., et al. 2024, [2024A&A...689A..93R](https://ui.adsabs.harvard.edu/abs/2024A%26A...689A..93R/abstract)
-  - Rodrigo, C., Solano, E., 2020, *The SVO Filter Profile Service*, [2020sea..confE.182R](https://ui.adsabs.harvard.edu/abs/2020sea..confE.182R/abstract)
-  - Rodrigo, C., Solano, E., Bayo, A., 2012, *The SVO Filter Profile Service*, [2012ivoa.rept.1015R](https://ui.adsabs.harvard.edu/abs/2012ivoa.rept.1015R/abstract)
-
-- The telescope and instrument data are based on the Weizmann Interactive Supernova Data Repository (WISeREP), <https://www.wiserep.org>.
-Yaron, O. & Gal-Yam, A. 2012, PASP, 124, 668 ([2012PASP..124..668Y](https://ui.adsabs.harvard.edu/abs/2012PASP..124..668Y)).
+The catalog data (`data/source/*.json`) is released under CC BY 4.0 — see
+[data/LICENSE-DATA.md](data/LICENSE-DATA.md) for the citation. The repository code/tooling is licensed
+separately under BSD 3-Clause — see the top-level `LICENSE` file.
 
 ---
 <!-- Do not delete this line. It is used to identify repositories based on this template. -->
